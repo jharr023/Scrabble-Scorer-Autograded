@@ -21,7 +21,8 @@ function oldScrabbleScorer(word) {
 	  for (const pointValue in oldPointStructure) {
  
 		 if (oldPointStructure[pointValue].includes(word[i])) {
-			letterPoints += `Points for '${word[i]}': ${pointValue}\n`
+			letterPoints += parseInt(pointValue);
+         console.log(`Points for '${word[i]}': ${pointValue}\n`);
 		 }
  
 	  }
@@ -33,7 +34,8 @@ function oldScrabbleScorer(word) {
 // don't change the names or your program won't work as expected. //
 
 function initialPrompt() {
-   console.log("Let's play some scrabble! Enter a word:");
+  let word = input.question("Let's play some scrabble! Enter a word to score: ");
+  oldScrabbleScorer(word);
 };
 
 let simpleScorer;
