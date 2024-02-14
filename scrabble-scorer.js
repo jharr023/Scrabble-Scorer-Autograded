@@ -12,6 +12,25 @@ const oldPointStructure = {
   10: ['Q', 'Z']
 };
 
+const scoringAlgorithms = [
+  {
+    name: 'Simple Score',
+    description: 'Each letter is worth 1 point.',
+    scoringFunction: simpleScorer,
+  },
+  {
+    name: 'Bonus Vowels',
+    description: 'Vowels are 3 pts, consonants are 1 pt.',
+    scoringFunction: vowelBonusScorer,
+  },
+  {
+    name: 'Scrabble',
+    description: 'The traditional scoring algorithm.',
+    scoringFunction: scrabbleScorer
+  }
+]; 
+console.log("Number of scoring algorithms:", scoringAlgorithms.length);
+
 /*
 const newPointStructure = {
   'a': 1,
@@ -120,26 +139,6 @@ function scrabbleScorer(word) {
   console.log(`Total score for '${word}': ${totalScore}`);
   return totalScore
 }
-
-const scoringAlgorithms = [
-  {
-    name: 'Simple Score',
-    description: 'Each letter is worth 1 point.',
-    scoringFunction: simpleScorer,
-  },
-  {
-    name: 'Bonus Vowels',
-    description: 'Vowels are 3 pts, consonants are 1 pt.',
-    scoringFunction: vowelBonusScorer,
-  },
-  {
-    name: 'Scrabble',
-    description: 'The traditional scoring algorithm.',
-    scoringFunction: scrabbleScorer
-  }
-]; 
-console.log("Number of scoring algorithms:", scoringAlgorithms.length);
-
 
 function scorerPrompt(word) {
  console.log('Which scoring algorithm would you like to use?\n');
