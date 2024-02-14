@@ -14,14 +14,14 @@ const oldPointStructure = {
 
 const scoringAlgorithms = [
   { name: 'Simple Score',
-    description: 'Each letter is worth 1 point.',
-    scoringFunction: simpleScorer, },
+    description: 'Each letter is worth 1 point.', 
+    scorerFunction: simpleScorer, },
   { name: 'Bonus Vowels',
     description: 'Vowels are 3 pts, consonants are 1 pt.',
-    scoringFunction: vowelBonusScorer, },
+    scorerFunction: vowelBonusScorer, },
   { name: 'Scrabble',
-    description: 'The traditional scoring algorithm.',
-    scoringFunction: scrabbleScorer }
+    description: 'The traditional scoring algorithm.', 
+    scorerFunction: scrabbleScorer, }
 ]; 
 console.log("Number of scoring algorithms:", scoringAlgorithms.length);
 
@@ -92,9 +92,10 @@ function simpleScorer(word) {
   word = word.toUpperCase();
   let score = 0;
   for (let i = 0; i < word.length; i++) {
-    score++
+    score += 1;
     console.log(`Points for '${word[i]}': ${score}\n`);
   }
+  console.log(`Total score for '${word}': ${score}`);
   return score
 }
 
