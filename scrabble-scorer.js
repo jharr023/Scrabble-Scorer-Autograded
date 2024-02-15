@@ -168,7 +168,7 @@ function runProgram() {
   console.log("Let's play some Scrabble!\n");
   let word = input.question("Enter a word to score: ");
    let selectedScorer = scorerPrompt();
-   let score = selectedScorer.scoringFunction(word);
+   let score = selectedScorer.scorerFunction(word);
    console.log(`Score for '${word}' using ${selectedScorer.name}:`, score);
    
 }
